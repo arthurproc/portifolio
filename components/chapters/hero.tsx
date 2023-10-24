@@ -2,7 +2,7 @@ import ResponsiveImage from '../responsive-image';
 
 function HeroChapter() {
   return (
-    <main className="flex text-left">
+    <div className="flex text-left">
       <div>
         <h2 className="text-xl">
           Olá mundo!
@@ -15,7 +15,7 @@ function HeroChapter() {
         src="https://placehold.co/600x400"
         alt="Hero"
       />
-    </main>
+    </div>
   );
 }
 
