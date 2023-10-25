@@ -1,6 +1,7 @@
 import AboutChapter from '@portifolio/components/chapters/about';
 import CareerChapter from '@portifolio/components/chapters/career';
 import Chapter from '@portifolio/components/chapters/chapter';
+import ContactChapter from '@portifolio/components/chapters/contact';
 import HeroChapter from '@portifolio/components/chapters/hero';
 
 export default function Home() {
@@ -22,6 +23,12 @@ export default function Home() {
         id="career"
       >
         <CareerChapter />
+      </Chapter>
+      <Chapter
+        title="Contato"
+        id="contact"
+      >
+        <ContactChapter />
       </Chapter>
     </main>
   );
