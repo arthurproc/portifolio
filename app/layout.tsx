@@ -1,7 +1,12 @@
 import NavBar from '@portifolio/components/navbar';
 import './globals.css';
-import '@glidejs/glide/dist/css/glide.core.min.css';
-import '@glidejs/glide/dist/css/glide.theme.min.css';
+
+// Splide slider imports
+import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/css/skyblue';
+import '@splidejs/react-splide/css/sea-green';
+import '@splidejs/react-splide/css/core';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
