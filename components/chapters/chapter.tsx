@@ -8,7 +8,7 @@ function Chapter(
   { children, title, id }: ChapterProps
 ) {
   return (
-    <section className="flex flex-col text-center my-5" style={ { minWidth:"0" } } id={id}>
+    <section className="text-center my-5 w-full" id={id}>
       {
         title? (
           <h1 className="text-2xl mb-5">

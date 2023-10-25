@@ -1,51 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
-import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import Image from "next/image";
+import ArticleRow from '../article-row';
 
 function CareerChapter() {
-  useEffect(() => {
-    const slider = new Glide('.glide').mount({ Controls, Breakpoints });
-
-    return () => slider.destroy();
-  }, []);
 
    return (
-    <div className="glide">
-      <div className="glide__track" data-glide-el="track">
-        <ul className="glide__slides">
-          <li className="glide__slide">
-            <Image
-              src="https://placehold.co/600x400"
-              alt="Hero"
-              height={400}
-              width={600}
-            />
-          </li>
-          <li className="glide__slide">
-            <Image
-              src="https://placehold.co/300x400"
-              alt="Hero"
-              height={400}
-              width={600}
-            />
-          </li>
-          <li className="glide__slide">
-            <Image
-              src="https://placehold.co/400x600"
-              alt="Hero"
-              height={400}
-              width={600}
-            />
-          </li>
-        </ul>
-      </div>
-      <div className="glide__arrows" data-glide-el="controls">
-        <button className="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-        <button className="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-      </div>
-    </div>
+    <Splide aria-label="My Favorite Images">
+      <SplideSlide>
+        <ArticleRow
+          image="https://placehold.co/600x400"
+          textRight
+          text="Mussum Ipsum, cacilds vidis litro abertis.  Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum."
+        />
+      </SplideSlide>
+      <SplideSlide>
+        <ArticleRow
+          image="https://placehold.co/600x400"
+          text="Mussum Ipsum, cacilds vidis litro abertis.  Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum."
+        />
+      </SplideSlide>
+    </Splide>
   );
 }
 
