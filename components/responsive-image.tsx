@@ -7,7 +7,7 @@ type ResponsiveImageProps = {
 
 function ResponsiveImage({ src, alt }: ResponsiveImageProps) {
   return (
-    <div className="image-container">
+    <div className="image-responsive-container">
       <Image className="image" src={src} alt={alt} fill sizes="100vw" />
     </div>
   );

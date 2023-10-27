@@ -5,8 +5,7 @@ import Image from "next/image";
 import ArticleRow from '../article-row';
 
 function CareerChapter() {
-
-   return (
+  return (
     <Splide aria-label="My Favorite Images">
       <SplideSlide>
         <ArticleRow

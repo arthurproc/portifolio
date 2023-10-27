@@ -1,4 +1,3 @@
-import NavBar from '@portifolio/components/navbar';
 import './globals.css';
 
 // Splide slider imports
@@ -8,9 +7,7 @@ import '@splidejs/react-splide/css/sea-green';
 import '@splidejs/react-splide/css/core';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { App } from '@portifolio/app/app';
 
 export const metadata: Metadata = {
   title: 'Portifólio do Procópio',
@@ -23,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <NavBar />
-        {children}
-      </body>
-    </html>
+    <App>
+      {children}
+    </App>
   );
 }
