@@ -1,7 +1,6 @@
 "use client";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import Image from "next/image";
 import ArticleRow from '../article-row';
 
 function CareerChapter() {

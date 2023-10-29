@@ -8,10 +8,10 @@ function Chapter(
   { children, title, id }: ChapterProps
 ) {
   return (
-    <section className="text-center my-5 w-full" id={id}>
+    <section className="text-center my-8 w-full" id={id}>
       {
         title? (
-          <h1 className="text-2xl mb-5">
+          <h1 className="text-5xl mb-3">
             {title}
           </h1>
         ) : null

@@ -6,7 +6,7 @@ import HeroChapter from '@portifolio/components/chapters/hero';
 
 export default function Home() {
   return (
-    <main className="container mx-auto min-h-screen overflow-hidden">
+    <main className="min-h-screen overflow-hidden">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
         <Chapter
           id="home"

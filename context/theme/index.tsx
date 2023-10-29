@@ -18,62 +18,30 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
 
-    if (localTheme) {
-      if (localTheme === 'system') {
-        setIsUsingSystemTheme(true);
-        return;
-      }
-
-      setIsUsingSystemTheme(false);
-      setTheme(localTheme as SupportedThemes);
+    if (!localTheme || localTheme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      setTheme(systemTheme);
+      setIsUsingSystemTheme(true);
       return;
     }
-
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    setTheme(systemTheme);
-    setIsUsingSystemTheme(true);
+    
+    setIsUsingSystemTheme(false);
+    setTheme(localTheme as SupportedThemes);
+    return;
   }, []);
 
-  useEffect(() => {
-    console.log('effect: is using system theme', isUsingSystemTheme);
-    const themeChangeListerner = (event: any) => {
-      const newColorScheme = event.matches ? "dark" : "light";
-      console.log('theme changed to', newColorScheme);
-      if (isUsingSystemTheme) {
-        console.log('is using system theme', isUsingSystemTheme);
-        setTheme(newColorScheme);
-      }
-    };
-
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', themeChangeListerner);
-    
-    if (!isUsingSystemTheme) return;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    setTheme(systemTheme);
-    
-    return () => {
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .removeEventListener('change', themeChangeListerner);
-    };
-  }, [isUsingSystemTheme]);
-
-
   const changeTheme = (newTheme: SupportedThemes | 'system') => {
-    console.log('changing theme to', newTheme);
+    window.localStorage.setItem('theme', newTheme);
+
     if (newTheme === 'system') {
-      console.log('set to system');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      setTheme(systemTheme);
       setIsUsingSystemTheme(true);
-      window.localStorage.setItem('theme', 'system');
       return;
     }
-    
-    console.log('set to', newTheme);
-    window.localStorage.setItem('theme', newTheme);
-    setIsUsingSystemTheme(false);
+
     setTheme(newTheme);
+    setIsUsingSystemTheme(false);
   };
 
   return (
