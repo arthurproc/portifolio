@@ -4,7 +4,7 @@ type ChapterProps = {
   id: string;
 }
 
-function Chapter(
+function SectionRoot(
   { children, title, id }: ChapterProps
 ) {
   return (
@@ -23,4 +23,4 @@ function Chapter(
   );
 }
 
-export default Chapter;
+export default SectionRoot;
