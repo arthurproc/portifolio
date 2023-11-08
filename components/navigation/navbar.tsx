@@ -49,6 +49,7 @@ const Navbar = () => {
           <div className="relative flex items-center">
             <Link
               href="/"
+              size="small"
             >
               <span className="text-xl font-bold">
                 Procorp.dev
@@ -79,13 +80,13 @@ const Navbar = () => {
               <nav className="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
                 <ul className="flex space-x-3">
                   <li>
-                    <Link href="#">Link 1</Link>
+                    <Link href="#" size="xsmall">Link 1</Link>
                   </li>
                   <li>
-                    <Link href="#">Link 2</Link>
+                    <Link href="#" size="xsmall">Link 2</Link>
                   </li>
                   <li>
-                    <Link href="#">Link 3</Link>
+                    <Link href="#" size="xsmall">Link 3</Link>
                   </li>
                 </ul>
               </nav>

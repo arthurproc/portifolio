@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeContext } from "@portifolio/context/theme";
-import Link from "next/link";
+import Link from "@portifolio/components/navigation/link";
 import { forwardRef, useContext } from "react";
 import { BiSun } from "react-icons/bi";
 import { BsMoonStars } from "react-icons/bs";
@@ -40,9 +40,9 @@ const NavMenu = forwardRef(
             </Link>
           </li>
           <li>
-            <a className="hover:text-sky-500 dark:hover:text-sky-400" href="/blog">
+            <Link href="#">
               Blog
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10">
